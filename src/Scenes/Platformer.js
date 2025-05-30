@@ -142,8 +142,7 @@ class Platformer extends Phaser.Scene {
         
         // Kill functionality
         if (tileBelow?.properties.kills){
-            //my.sprite.player.setPosition(30, 345);
-            //my.sprite.player.setVelocity(0, 0);
+            this.scene.restart();
         }
         
         // Flag touchie
