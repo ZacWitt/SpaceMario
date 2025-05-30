@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Man Mario</title>
+    <style>
+    @font-face {
+        font-family: 'Pixelated Elegance';
+        src: url('./assets/PixelatedEleganceRegular-ovyAA.ttf') format('truetype');
+    }
+    </style>
+    <script src="./lib/phaser.js"></script>
+    <script src="./src/Scenes/Load.js"></script>
+    <script src="./src/Scenes/Start.js"></script>
+    <script src="./src/Scenes/Platformer.js"></script>
+    <script src="./src/Scenes/Win.js"></script>
+    <script src="./src/main.js"></script>
+    <script>
+    const font = new FontFace("Pixelated Elegance", "url('./assets/PixelatedEleganceRegular-ovyAA.ttf')");
+
+    font.load().then(function(loadedFont) {
+        document.fonts.add(loadedFont);
+        console.log("Font loaded!");
+
+        const game = new Phaser.Game(config);
+    }).catch(function(error) {
+        console.error("Font failed to load", error);
+        const game = new Phaser.Game(config); // fallback line :)
+    });
+    </script>
+</head>
+<body>
+    <div id="phaser-game"></div>
+    <span id="description"></span>
+</body>
+</html>
